@@ -11,18 +11,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="adminLte/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{asset('adminLte/bootstrap/css/bootstrap.min.css')}}">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="adminLte/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="{{asset('adminLte/css/AdminLTE.min.css')}}">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
   -->
-  <link rel="stylesheet" href="adminLte/css/skins/skin-blue.min.css">
+  <link rel="stylesheet" href="{{asset('adminLte/css/skins/skin-blue.min.css')}}">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -79,14 +79,14 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="adminLte/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="{{asset('adminLte/img/user2-160x160.jpg')}}" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">Nombre del Usuario</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="adminLte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{asset('adminLte/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
 
                 <p>
                   Nombre del Usuario
@@ -115,7 +115,7 @@ desired effect
       <!-- Datos del Usuario Logueado ....................................................-->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="adminLte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="{{asset('adminLte/img/user2-160x160.jpg')}}" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{-- auth()->user()->name --}}Nombre Usuario</p>
@@ -127,19 +127,40 @@ desired effect
 
       <!-- Menu de Opciones ...............................................................-->
       <ul class="sidebar-menu">
-        <li class="header">HEADER</li>
+        <!--<li class="header">Administración</li>-->
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        {{--<li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>--}}
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+          <a href="#"><i class="fa fa-clone"></i> <span>Ordenes</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="{{ route('ordenes.crear') }}"><i class="fa fa-pencil"></i>Crear Orden</a></li>
+            <li><a href="#"><i class="fa fa-eye"></i>Ver Ordenes</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-clone"></i> <span>Sedes</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('sedes.crear') }}"><i class="fa fa-pencil"></i>Crear sede</a></li>
+            <li><a href="{{ route('sedes.index') }}"><i class="fa fa-eye"></i>Ver Sedes</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#"><i class="fa fa-clone"></i> <span>Variables</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="{{ route('variables.index') }}"><i class="fa fa-eye"></i>Ver variables</a></li>
           </ul>
         </li>
       </ul>
@@ -265,11 +286,11 @@ desired effect
 <!-- REQUIRED JS SCRIPTS -->
 
 <!-- jQuery 2.2.3 -->
-<script src="adminLte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="{{asset('adminLte/plugins/jQuery/jquery-2.2.3.min.js')}}"></script>
 <!-- Bootstrap 3.3.6 -->
-<script src="adminLte/bootstrap/js/bootstrap.min.js"></script>
+<script src="{{asset('adminLte/bootstrap/js/bootstrap.min.js')}}"></script>
 <!-- AdminLTE App -->
-<script src="adminLte/js/app.min.js"></script>
+<script src="{{asset('adminLte/js/app.min.js')}}"></script>
 
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the

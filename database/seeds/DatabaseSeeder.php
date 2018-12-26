@@ -16,5 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(EstadosItemTableSeeder::class);
         $this->call(EstadosOrdenTableSeeder::class);
         $this->call(VariablesEditablesTableSeeder::class);
+        $this->call(ConvencionTableSeeder::class);
+
     }
 }

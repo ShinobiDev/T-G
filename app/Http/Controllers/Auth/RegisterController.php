@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Sede;
+use App\Events\UsuarioCreado;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -72,26 +74,34 @@ class RegisterController extends Controller
 
     public function almacenarUsuario(Request $request)
     {   
-        //Instanciamos un objeto del modelo Orden, para guardar los datos en la BD
+        //dd($request);
+
+        //Instanciamos un objeto del modelo User, para guardar los datos en la BD
         $user = new User;
-        $user->name = $request->get('nombre');
+
+        $pass = str_random(8);    
+        $user->name = $request->get('name');
         $user->email = $request->get('email');
-        $user->password = $request->get('password');
+        $user->password = bcrypt($pass);
         $user->rol_id = 3;
         $user->save();    
 
         //Recorremos cada sede y la almacenamos
         foreach ($request['nombreSede'] as $key => $value) {
+
             $sede = new Sede;   
             
             $sede->user_id = $user->id;
-            $sede->nombreSede = $value;            
-            $sede->direccionSede = $request['direccionSede'][$key];
-            $sede->telefonoSede = $request['telefonoSede'][$key];
+            $sede->nombre = $value;            
+            $sede->direccion = $request['direccionSede'][$key];
+            $sede->telefono = $request['telefonoSede'][$key];
             $sede->contactoSede = $request['contactoSede'][$key];
             $sede->save();
-
-            return redirect('/login')->with('flash','El usuario fue creado exitosamente');
         }
+
+        $user = $user->email;
+        //Enviamos el email con las credenciales de acceso
+        UsuarioCreado::dispatch($user, $pass);
+        return redirect('/login')->with('flash','El usuario fue creado exitosamente');
     }
 }

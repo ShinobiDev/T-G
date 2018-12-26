@@ -27,22 +27,8 @@
                                     <strong>{{ $errors->first('email') }}</strong>
                                 </span>
                             @endif
-                            </div>
-                        </div>
+                        </div>                        
 
-                        <div class="form-group col-md-6">
-                            <label for="password" class="col-form-label text-md-right">Contraseña</label>
-                            <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="password-confirm" class="col-form-label text-md-right">Confirme la contraseña</label>
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                        </div>
                         <div class="panel panel-info col-md-12">
                             <div class="panel-heading">
                                 <h3 class="panel-title">Agregar las sedes</h3>
@@ -50,7 +36,7 @@
                             <div class="panel-body">
                                 <div class="form-group col-md-6">
                                     <label for="nombreSede" class="col-form-label text-md-right text-primary">Nombre de la sede</label>
-                                    <input id="nombreSede" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="nombreSede" required>
+                                    <input id="nombreSede" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="nombreSede">
                                     @if ($errors->has('nombreSede'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('nombreSede') }}</strong>
@@ -59,7 +45,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="direccionSede" class="col-form-label text-md-right text-primary">Dirección de la sede</label>
-                                    <input id="direccionSede" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="direccionSede" required>
+                                    <input id="direccionSede" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="direccionSede">
                                     @if ($errors->has('direccionSede'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('direccionSede') }}</strong>
@@ -68,7 +54,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="telefonoSede" class="col-form-label text-md-right text-primary">Telefono de la sede</label>
-                                    <input id="telefonoSede" type="number" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="telefonoSede" required>
+                                    <input id="telefonoSede" type="number" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="telefonoSede">
                                     @if ($errors->has('telefonoSede'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('telefonoSede') }}</strong>
@@ -77,7 +63,7 @@
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="contactoSede" class="col-form-label text-md-right text-primary">Nombre de contacto</label>
-                                    <input id="contactoSede" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="contactoSede" required>
+                                    <input id="contactoSede" type="text" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="contactoSede">
                                     @if ($errors->has('contactoSede'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('contactoSede') }}</strong>
@@ -99,7 +85,7 @@
                                         <tr class="text-danger">
                                             <th>Nombre</th>
                                             <th>Dirección</th>
-                                            <th>Telefono</th>
+                                            <th>Teléfono</th>
                                             <th>Contacto</th>
                                         </tr>
                                     </thead>
@@ -113,7 +99,9 @@
                         </div>
                         <div class="form-group mb-0">
                             <div class="col-md-6">
-                                <button type="button" class="btn btn-primary" value="Registrar">
+                                <button type="submit" class="btn btn-primary" >Registrar</button>
+                                
+
                             </div>
                         </div>
                     </form>

@@ -20,6 +20,29 @@ Route::get('admin', function(){
 	return view('admin.panel');
 });
 
+
+Route::group(['prefix'=>'trabajos','namespace'=>'Trabajos','middleware'=>'auth'], function(){
+
+    //Rutas de las ordenes
+    Route::get('ordenes/crear','OrdenesController@crear')->name('ordenes.crear'); 
+
+    //Rutas de las sedes
+    Route::get('sedes','SedesController@index')->name('sedes.index');
+    Route::get('sedes/crear','SedesController@crear')->name('sedes.crear');
+    Route::post('sedes/almacenar','SedesController@almacenar')->name('trabajos.sedes.almacenar');
+    Route::post('sedes/{sede_id}','SedesController@actualizar')->name('trabajos.sedes.update');
+
+    //Variables Editables -----------------------------------------------------------
+    Route::get('variables', 'VariableController@index')->name('variables.index');
+    Route::post('variables/{variable_id}', 'VariableController@update')->name('trabajos.variables.update');
+
+});
+
+
+
+
+
+
 /*Rutas de autenticación del metodo Auth -------------------------------------------------------------------*/
     Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('login', 'Auth\LoginController@login');
