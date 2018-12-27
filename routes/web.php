@@ -24,7 +24,13 @@ Route::get('admin', function(){
 Route::group(['prefix'=>'trabajos','namespace'=>'Trabajos','middleware'=>'auth'], function(){
 
     //Rutas de las ordenes
-    Route::get('ordenes/crear','OrdenesController@crear')->name('ordenes.crear'); 
+    Route::get('ordenes/crear','OrdenesController@crear')->name('ordenes.crear');
+    Route::post('ordenes/almacenar','OrdenesController@almacenar')->name('ordenes.almacenar');
+    Route::get('ordenes/cotizadas', 'OrdenesController@cotizadas')->name('ordenes.cotizadas');
+    Route::get('detalleOrden/{orden_id}','OrdenesController@detalleCotizadas')->name('ordenes.detalle');
+    Route::post('asignarUsuarioOrden/', 'OrdenesController@asignarUsuarioOrden')->name('ordenes.asignarUsuarioOrden');
+    Route::get('ordenes/asignadas', 'OrdenesController@asignadas')->name('ordenes.asignadas');
+    Route::get('detalleAsignada/{orden_id}', 'OrdenesController@detalleAsignada')->name('detalle.asignadas');
 
     //Rutas de las sedes
     Route::get('sedes','SedesController@index')->name('sedes.index');

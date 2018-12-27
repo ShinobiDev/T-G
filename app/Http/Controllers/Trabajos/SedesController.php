@@ -13,7 +13,7 @@ class SedesController extends Controller
 		$user = auth()->user()->id;
 
 		//dd($user);
-		$sedes = Sede::select('nombre','telefono','direccion','contactoSede')
+		$sedes = Sede::select('id','nombre','telefono','direccion','contactoSede')
 		->where('user_id','=',$user)
 		->get();
 		return view('trabajos.sedes.index', compact('sedes'));

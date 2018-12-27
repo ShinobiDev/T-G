@@ -139,7 +139,8 @@ desired effect
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('ordenes.crear') }}"><i class="fa fa-pencil"></i>Crear Orden</a></li>
-            <li><a href="#"><i class="fa fa-eye"></i>Ver Ordenes</a></li>
+            <li><a href="{{ route('ordenes.cotizadas') }}"><i class="fa fa-eye"></i>Sin Asignar</a></li>
+            <li><a href="{{ route('ordenes.asignadas') }}"><i class="fa fa-eye"></i>Asignadas</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -198,10 +199,12 @@ desired effect
   <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
-    </div>
-    <!-- Default to the left -->
-    <strong>Copyright &copy; 2016 <a href="#">Company</a>.</strong> All rights reserved.
+          <b>Version</b> 1.0
+        </div>
+        <center>
+            <a href="http://prismaweb.co/diseno-a-la-medida/" target="_blank" >Desarrollado por: </a>
+            <a href="http://prismaweb.co/diseno-a-la-medida/" target="_blank" ><img src="http://www.prismaweb.net/img/prismaweb-footer-webs-gris.png" alt="WWW.PRISMAWEB.CO - Skype: prismaweb22" /></a>
+        </center>
   </footer>
 
   <!-- Control Sidebar -->

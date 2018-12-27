@@ -16,12 +16,12 @@ class CreateItemOrdensTable extends Migration
         Schema::create('item_ordens', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('orden_id');
-            $table->unsignedInteger('item_id');
+            $table->unsignedInteger('item_id')->nullable();
             $table->unsignedInteger('estadoItem_id');
             $table->unsignedInteger('sede_id');
             $table->string('marca');
             $table->string('referencia');
-            $table->string('descripción');
+            $table->string('descripcion');
             $table->string('cantidad');
             $table->string('comentarios');
             $table->timestamps();

@@ -47,19 +47,19 @@
 
 								        	<div class="form-group">
 								    			<label>Nombre</label>
-								    			<input name="nombre" class="form-control" placeholder="{{ $sede->nombre }}" required></input>
+								    			<input name="nombre" class="form-control" value="{{ $sede->nombre }}" required></input>
 								    		</div>
 								    		<div class="form-group">
 								    			<label>Dirección</label>
-								    			<input name="direccion" class="form-control" placeholder="{{ $sede->direccion }}" required></input>
+								    			<input name="direccion" class="form-control" value="{{ $sede->direccion }}" required></input>
 								    		</div>
 								    		<div class="form-group">
 								    			<label>Telefono</label>
-								    			<input name="telefono" class="form-control" placeholder="{{ $sede->telefono }}" required></input>
+								    			<input name="telefono" class="form-control" value="{{ $sede->telefono }}" required></input>
 								    		</div>
 								    		<div class="form-group">
 								    			<label>Nombre Contacto</label>
-								    			<input name="contacto" class="form-control" placeholder="{{ $sede->contactoSede }}" required></input>
+								    			<input name="contacto" class="form-control" value="{{ $sede->contactoSede }}" required></input>
 								    		</div>
 
 									      </div>

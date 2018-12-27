@@ -32,6 +32,6 @@ class EnviarCredencialesLogin extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.credencialesLogin');
+        return $this->markdown('emails.credencialesLogin')->subject('Tus credenciales de acceso a '. config('app.name'));
     }
 }

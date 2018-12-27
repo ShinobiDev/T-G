@@ -35,7 +35,7 @@
 			    		</div>
 			    		<div class="form-group">
 			    			<label>Nombre del contacto de la Sede</label>
-			    			<input name="contacto" class="form-control" placeholder="Ingrese el telefono de la Sede"></input>
+			    			<input name="contacto" class="form-control" placeholder="Ingrese el nombre del contacto"></input>
 			    		</div>
 			    		<div class="form-group">
 			    			<button type="submit" class="btn btn-primary">Crear Sede</button>

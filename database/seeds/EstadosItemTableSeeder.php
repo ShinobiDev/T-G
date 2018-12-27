@@ -15,6 +15,10 @@ class EstadosItemTableSeeder extends Seeder
         EstadoItem::truncate();
 
         $estadoItem = new EstadoItem;
+        $estadoItem->nombre = "Cotizado";
+        $estadoItem->save();
+
+        $estadoItem = new EstadoItem;
         $estadoItem->nombre = "Dividido";
         $estadoItem->save();
 

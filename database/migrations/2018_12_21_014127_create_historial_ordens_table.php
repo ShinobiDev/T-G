@@ -15,6 +15,11 @@ class CreateHistorialOrdensTable extends Migration
     {
         Schema::create('historial_ordens', function (Blueprint $table) {
             $table->increments('id');
+            $table->unsignedInteger('orden_id');
+            $table->unsignedInteger('estadoAnterior_id');
+            $table->unsignedInteger('estadoActual_id');
+            $table->unsignedInteger('userGestiona_id');
+            $table->unsignedInteger('userAsignado_id');
             $table->timestamps();
         });
     }
